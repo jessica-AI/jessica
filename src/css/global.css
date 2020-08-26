@@ -1,0 +1,20 @@
+:root{
+    --color-main-1:#0abde3;
+    --color-main-2:#48dbfb;
+    --color-gray-1:#444;
+    --color-gray-2:#eee;
+}
+
+*,
+html,
+body {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", "Noto Sans TC", "Segoe Script;", "微軟正黑體", sans-serif;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}

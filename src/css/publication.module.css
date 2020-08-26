@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 20%;
+}
+
+.container section h3{
+    font-size: 3rem;
+    font-family: "Lobster", cursive;
+    color: var(--color-main-1);
+    margin:1rem 0;
+}
+.container section li{
+    font-size: 1.4rem;
+}
+
+.container section li p{
+    color:var(--color-gray-1);
+    font-size: 1.4rem;
+    margin: 1.2rem 0;
+    line-height: 1.8;
+}
