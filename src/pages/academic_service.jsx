@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styles from "../css/academicService.module.css";
+import Helmet from "react-helmet";
 
 const AcademicService = ({ data }) => {
     const {
@@ -12,6 +13,9 @@ const AcademicService = ({ data }) => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Academic Service | 鄭麗珍 Li-Chen Cheng</title>
+            </Helmet>
             <article className={styles.container}>
                 {services.map(service => {
                     return (

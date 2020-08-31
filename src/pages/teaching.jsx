@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styles from "../css/teaching.module.css";
+import Helmet from "react-helmet";
 
 const Teaching = ({ data }) => {
     const {
@@ -10,6 +11,9 @@ const Teaching = ({ data }) => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Teaching | 鄭麗珍 Li-Chen Cheng</title>
+            </Helmet>
             <article className={styles.container}>
                 {teachings.map(
                     ({

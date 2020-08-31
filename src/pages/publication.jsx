@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styles from "../css/publication.module.css";
+import Helmet from "react-helmet";
 
 const Publication = ({ data }) => {
     const {
@@ -11,6 +12,9 @@ const Publication = ({ data }) => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Publication | 鄭麗珍 Li-Chen Cheng</title>
+            </Helmet>
             <article className={styles.container}>
                 {publications.map(publication => {
                     return (

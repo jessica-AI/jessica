@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styles from "../css/project.module.css";
+import Helmet from "react-helmet";
 
 const Project = ({ data }) => {
     const {
@@ -12,6 +13,9 @@ const Project = ({ data }) => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Project | 鄭麗珍 Li-Chen Cheng</title>
+            </Helmet>
             <article className={styles.container}>
                 {projects.map(project => {
                     return (

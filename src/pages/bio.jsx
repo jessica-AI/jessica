@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styles from "../css/bio.module.css";
+import Helmet from "react-helmet";
 
 const Bio = ({ data }) => {
     const {
@@ -11,6 +12,9 @@ const Bio = ({ data }) => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Bio | 鄭麗珍 Li-Chen Cheng</title>
+            </Helmet>
             <article className={styles.container}>
                 {bios.map(bio => {
                     return (

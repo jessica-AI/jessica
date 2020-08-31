@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styles from "../css/most.module.css";
+import Helmet from "react-helmet";
 
 const Most = ({ data }) => {
     const {
@@ -12,6 +13,9 @@ const Most = ({ data }) => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Most | 鄭麗珍 Li-Chen Cheng</title>
+            </Helmet>
             <article className={styles.container}>
                 {projects.map(project => {
                     return (
