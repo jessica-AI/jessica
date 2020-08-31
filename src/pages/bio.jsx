@@ -14,8 +14,8 @@ const Bio = ({ data }) => {
             <article className={styles.container}>
                 {bios.map(bio => {
                     return (
-                        <section>
-                            <h3>{bio.title}</h3>
+                        <section key={bio.title}>
+                            <h3 className={styles.title}>{bio.title}</h3>
                             {documentToReactComponents(bio.content.json)}
                         </section>
                     );
@@ -27,7 +27,7 @@ const Bio = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulBio(sort: {order: ASC, fields: createdAt}) {
+        allContentfulBio(sort: { order: ASC, fields: createdAt }) {
             nodes {
                 title
                 content {

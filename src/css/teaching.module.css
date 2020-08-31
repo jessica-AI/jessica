@@ -5,18 +5,15 @@
 }
 
 .container section h3.title{
-    font-size: 3rem;
-    font-family: "Lobster", cursive;
+    font-size: 2.2rem;
+    font-family: "Microsoft JhengHei";
     color: var(--color-main-1);
     margin:1rem 0;
 }
-.container section li{
-    font-size: 1.4rem;
-}
 
-.container section li p{
+.container section p{
     color:var(--color-gray-1);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin: 1.2rem 0;
     line-height: 1.8;
 }

@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styles from "../css/publication.module.css";
 
-const Bio = ({ data }) => {
+const Publication = ({ data }) => {
     const {
         allContentfulPublication: { nodes: publications },
     } = data;
@@ -15,7 +15,7 @@ const Bio = ({ data }) => {
                 {publications.map(publication => {
                     return (
                         <section>
-                            <h3>{publication.title}</h3>
+                            <h3 className={styles.title}>{publication.title}</h3>
                             {documentToReactComponents(publication.content.json)}
                         </section>
                     );
@@ -38,4 +38,4 @@ export const query = graphql`
     }
 `;
 
-export default Bio;
+export default Publication;

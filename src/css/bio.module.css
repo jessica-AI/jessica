@@ -4,7 +4,7 @@
     padding: 3rem 20%;
 }
 
-.container section h3{
+.container section h3.title{
     font-size: 3rem;
     font-family: "Lobster", cursive;
     color: var(--color-main-1);

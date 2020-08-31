@@ -1,20 +1,67 @@
-:root{
-    --color-main-1:#0abde3;
-    --color-main-2:#48dbfb;
-    --color-gray-1:#444;
-    --color-gray-2:#eee;
+:root {
+    --color-main-1: #0abde3;
+    --color-main-2: #48dbfb;
+    --color-gray-1: #444;
+    --color-gray-2: #eee;
 }
 
 *,
-html,
-body {
-    font-size: 10px;
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Arial", "Noto Sans TC", "Segoe Script;", "微軟正黑體", sans-serif;
+    box-sizing: inherit;
 }
 
-a:link, a:visited, a:hover, a:active {
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Arial", "Noto Sans TC", "Segoe Script;", "微軟正黑體",
+        sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
     text-decoration: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.3rem;
+}
+
+h3 {
+    font-size: 2.1rem;
+}
+
+h4 {
+    font-size: 1.9rem;
+}
+
+h5 {
+    font-size: 1.7rem;
+}
+
+h6 {
+    font-size: 1.6rem;
+}
+
+blockquote {
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #eee;
+    border-left: 0.5rem solid var(--color-main-1);
+    margin: 1.5rem 3rem 0 1rem;
+    padding-left: 2rem;
+    border-radius: 0.6rem;
 }

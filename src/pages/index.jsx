@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "gatsby-image";
 import "../css/global.css";
@@ -8,7 +8,16 @@ import Layout from "../components/Layout";
 import Helmet from "react-helmet";
 
 const Home = ({ data }) => {
-    const { contentfulHome: { aboutMe, title, description, researchInterests: { researchInterests }, photo: { fluid } } } = data;
+    const {
+        contentfulHome: {
+            aboutMe,
+            title,
+            name,
+            description,
+            researchInterests: { researchInterests },
+            photo: { fluid },
+        },
+    } = data;
 
     return (
         <Layout>
@@ -20,7 +29,7 @@ const Home = ({ data }) => {
                     <Image fluid={fluid} alt={title} className={styles.photo} />
                     <div>
                         <div>
-                            <h3>鄭麗珍 副教授</h3>
+                            <h3>{name}</h3>
                             {documentToReactComponents(description.json)}
                         </div>
                         <div>
@@ -35,8 +44,8 @@ const Home = ({ data }) => {
                 </section>
             </article>
         </Layout>
-    )
-}
+    );
+};
 
 export const query = graphql`
     {
@@ -46,6 +55,7 @@ export const query = graphql`
             }
             subtitle
             title
+            name
             description {
                 json
             }
