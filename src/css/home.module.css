@@ -9,7 +9,6 @@
 
 .intro {
     display: flex;
-    background-color: var(--color-gray-2);
     padding: 3rem 20%;
 }
 
@@ -36,6 +35,7 @@
     flex-direction: column;
     padding: 3rem 20%;
     padding-top: 1rem;
+    background-color: var(--color-gray-2);
 }
 
 .about h3 {
