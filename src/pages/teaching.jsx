@@ -23,12 +23,17 @@ const Teaching = ({ data }) => {
                     {teachings.map(({ title }, index) => {
                         return (
                             <div
+                                role="button"
+                                tabIndex={index}
                                 onClick={() => {
                                     setSelected(index);
                                 }}
                                 className={
                                     index === selected ? styles.selected : ""
                                 }
+                                onKeyDown={event => {
+                                    if (event.keycode === 13) setSelected(index);
+                                }}
                             >
                                 <span>{title.replace(" ", "\n")}</span>
                             </div>
