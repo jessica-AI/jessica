@@ -1,0 +1,21 @@
+.card{
+    display:block;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    background-color: var(--color-gray-2);
+    padding:2rem;
+}
+
+.card:hover{
+    background-color: var(--color-gray-1);
+    color:#fff;
+    transition: all .3s;
+}
+
+.card p{
+    margin-left: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}

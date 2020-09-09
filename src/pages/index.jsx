@@ -6,6 +6,7 @@ import "../css/global.css";
 import styles from "../css/home.module.css";
 import Layout from "../components/Layout";
 import Helmet from "react-helmet";
+import "../utils/fontawesome";
 
 const Home = ({ data }) => {
     const {

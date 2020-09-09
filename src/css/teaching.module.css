@@ -55,7 +55,7 @@
 }
 
 .sidebar div:hover:not(.selected)::after {
-    animation: grow 0.5s forwards;
+    animation: grow 0.25s forwards;
     max-width: 100%;
     width: 100%;
     background-color: var(--color-gray-2);

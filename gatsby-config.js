@@ -7,6 +7,8 @@ require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`
 })
 
+const autoprefixer = require('autoprefixer');
+
 module.exports = {
     /* Your site config here */
     plugins: [
@@ -26,6 +28,15 @@ module.exports = {
                 name: `images`,
                 path: `${__dirname}/src/images/`,
             },
+        },
+        {
+            resolve: `gatsby-plugin-postcss`,
+            options: {
+                postCssPlugins: [
+                    autoprefixer
+                ],
+                precision: 8
+            }
         }
     ],
 };

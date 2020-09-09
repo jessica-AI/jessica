@@ -12,8 +12,12 @@
     color: #fff;
     z-index: 1;
     top: 50%;
-    left: 20%;
+    left: 0;
     transform: translateY(-60%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20%;
 }
 
 .header h1 {
@@ -24,6 +28,24 @@
 .header h2 {
     font-size: 2.5rem;
     font-family: "Acme", sans-serif;
+}
+
+.header .contact {
+    align-self: end;
+    display: flex;
+}
+.header .contact a {
+    line-height: 1rem;
+    color: #fff;
+    padding: 1rem;
+    margin: 0 0.25rem;
+    font-size: 3rem;
+    border-radius: 0.5rem;
+}
+
+.header .contact a:hover {
+    color: #000;
+    background-color: #fff;
 }
 
 .header > div {
@@ -53,25 +75,29 @@
     display: flex;
     list-style: none;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .header > nav > ul > li {
-    color:#fff;
+    color: #fff;
+    margin: 1rem 0.5rem;
 }
 
-.header > nav > ul > li:hover {
+.header > nav > ul > li a:hover {
     background-color: #fff;
-    color:var(--color-main-1);
+    color: var(--color-main-1);
 }
 
 .header > nav > ul > li > a {
-    display:block;
-    padding:2rem;
+    display: block;
     height: 100%;
+    padding: 1rem;
     font-size: 2rem;
     white-space: nowrap;
-    color:inherit;
+    color: inherit;
+    overflow: hidden;
+    border-radius: 0.5rem;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -87,4 +113,4 @@
     .header > nav > ul > li {
         margin: 0.5rem 0;
     }
-} 
+}

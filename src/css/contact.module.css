@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 20%;
+}
+
+.container h3.title{
+    font-size: 3rem;
+    font-family: "Lobster", cursive;
+    color: var(--color-main-1);
+    margin:1rem 0;
+}
+
+.container a{
+    color:var(--color-gray-1);
+    margin: 1.2rem 0;
+}
