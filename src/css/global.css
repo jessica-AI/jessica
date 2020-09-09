@@ -1,3 +1,5 @@
+@import '../../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
+
 :root {
     --color-main-1: #0abde3;
     --color-main-2: #48dbfb;
