@@ -2,11 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "gatsby-image";
-import "../css/global.css";
 import styles from "../css/home.module.css";
 import Layout from "../components/Layout";
 import Helmet from "react-helmet";
-import "../utils/fontawesome";
 
 const Home = ({ data }) => {
     const {
