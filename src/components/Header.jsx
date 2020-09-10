@@ -36,7 +36,7 @@ const Header = () => {
 
     const renderEmailIcon = email => {
         return (
-            <a href={`mailto:${email}`}>
+            <a href={`mailto:${email}`} key={email}>
                 <FontAwesomeIcon icon={["far", "envelope"]} />
             </a>
         );
@@ -55,6 +55,16 @@ const Header = () => {
                 </div>
             </article>
             <Image fluid={fluid} alt="background" />
+            <input
+                type="checkbox"
+                id="hamburger"
+                className={styles.hamburger_control}
+            />
+            <label htmlFor="hamburger" className={styles.hamburger_container}>
+                <div className={styles.bar1}></div>
+                <div className={styles.bar2}></div>
+                <div className={styles.bar3}></div>
+            </label>
             <Navbar />
         </header>
     );
