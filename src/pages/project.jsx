@@ -3,13 +3,20 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styles from "../css/project.module.css";
 import Helmet from "react-helmet";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+const { BLOCKS } = require('@contentful/rich-text-types');
+
+const options = {
+    renderNode: {
+        [BLOCKS.EMBEDDED_ASSET]: node => <img class="custom-asset" src={`${node.data.target.fields.file["en-US"].url}`} alt="custom-asset" />
+    },
+};
 
 const Project = ({ data }) => {
     const {
         allContentfulProject: { nodes: projects },
     } = data;
-
-    const renderProject = project => <li>{project}</li>;
 
     return (
         <Layout>
@@ -21,7 +28,7 @@ const Project = ({ data }) => {
                     return (
                         <section>
                             <h3 className={styles.title}>{project.title}</h3>
-                            <ul>{project.items.map(renderProject)}</ul>
+                            {documentToReactComponents(project.content.json,options)}
                         </section>
                     );
                 })}
@@ -35,7 +42,9 @@ export const query = graphql`
         allContentfulProject(sort: { order: ASC, fields: createdAt }) {
             nodes {
                 title
-                items
+                content{
+                    json
+                }
             }
         }
     }
