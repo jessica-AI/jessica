@@ -9,7 +9,7 @@ const { BLOCKS } = require('@contentful/rich-text-types');
 
 const options = {
     renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: node => <img class="custom-asset" src={`${node.data.target.fields.file["en-US"].url}`} alt="custom-asset" />
+        [BLOCKS.EMBEDDED_ASSET]: node => <img className="custom-asset" src={`${node.data.target.fields.file["en-US"].url}`} alt="custom-asset" />
     },
 };
 
