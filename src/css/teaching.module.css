@@ -86,3 +86,19 @@
         width: 100%;
     }
 }
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        padding:0
+    }
+
+    .container section h3.title {
+        display: none;
+    }
+
+    .sidebar div.selected {
+        order:-1;
+    }
+}

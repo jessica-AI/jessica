@@ -5,6 +5,8 @@ import Image from "gatsby-image";
 import styles from "../css/home.module.css";
 import Layout from "../components/Layout";
 import Helmet from "react-helmet";
+import ContactCard from "../components/ContactCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Home = ({ data }) => {
     const {
@@ -16,6 +18,7 @@ const Home = ({ data }) => {
             researchInterests: { researchInterests },
             photo: { fluid },
         },
+        contentfulContact: { linkedIn, email }
     } = data;
 
     return (
@@ -40,6 +43,13 @@ const Home = ({ data }) => {
                 <section className={styles.about}>
                     <h3>about me</h3>
                     {documentToReactComponents(aboutMe.json)}
+                </section>
+                <section className={styles.contact}>
+                    <h3>Find Me Online</h3>
+                    {email.map(email => (
+                        <ContactCard link={`mailto:${email}`} icon={<FontAwesomeIcon icon={["far", "envelope"]} />} />
+                    ))}
+                    <ContactCard link={linkedIn} icon={<FontAwesomeIcon icon={["fab", "linkedin"]} />}/>
                 </section>
             </article>
         </Layout>
@@ -66,6 +76,10 @@ export const query = graphql`
                     ...GatsbyContentfulFluid
                 }
             }
+        }
+        contentfulContact {
+            linkedIn
+            email
         }
     }
 `;

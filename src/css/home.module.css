@@ -65,6 +65,27 @@
     margin-right: 4rem;
 }
 
+.contact{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 20%;
+    padding-top: 1rem;
+}
+
+.contact h3 {
+    font-family: "Lobster", cursive;
+    font-size: 3.5rem;
+    color: var(--color-main-1);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact a{
+    color:var(--color-gray-1);
+    margin: 1.2rem 0;
+}
+
+
 @media only screen and (max-width: 992px) {
     .intro {
         flex-direction: column;
