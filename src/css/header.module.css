@@ -9,7 +9,7 @@
 
 .header article {
     position: absolute;
-    color: #fff;
+    color: var(--color-main-1);
     z-index: 1;
     top: 50%;
     left: 0;
@@ -22,12 +22,12 @@
 
 .header h1 {
     font-size: 4rem;
-    font-family: "Acme", sans-serif;
+    font-family: "Acme", "Microsoft JhengHei", sans-serif;
 }
 
 .header h2 {
     font-size: 2.5rem;
-    font-family: "Acme", sans-serif;
+    font-family: "Acme", "Microsoft JhengHei", sans-serif;
 }
 
 .header .contact {
@@ -36,7 +36,7 @@
 }
 .header .contact a {
     line-height: 1rem;
-    color: #fff;
+    color: var(--color-main-1);
     padding: 1rem;
     margin: 0 0.25rem;
     font-size: 3rem;
@@ -44,8 +44,8 @@
 }
 
 .header .contact a:hover {
-    color: #000;
-    background-color: #fff;
+    color: #fff;
+    background-color: var(--color-main-1);
 }
 
 .header > div {
@@ -54,8 +54,8 @@
     position: relative;
     background-image: linear-gradient(
         to left top,
-        rgba(0, 0, 0, 0.9),
-        rgba(0, 0, 0, 0.9)
+        rgba(0, 159, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
     );
 }
 
@@ -113,7 +113,7 @@
     z-index: 100;
     background-color: #fff;
     box-shadow: 2px 3px 2px 2px rgba(0, 0, 0, 0.3);
-    padding:1rem;
+    padding: 1rem;
     border-radius: 50%;
 }
 
@@ -142,10 +142,10 @@
 }
 
 @media only screen and (max-width: 480px) {
-    .header h1{
+    .header h1 {
         font-size: 3rem;
     }
-    .header h2{
+    .header h2 {
         display: none;
     }
 }

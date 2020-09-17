@@ -47,7 +47,7 @@ const Home = ({ data }) => {
                 <section className={styles.contact}>
                     <h3>Find Me Online</h3>
                     {email.map(email => (
-                        <ContactCard link={`mailto:${email}`} icon={<FontAwesomeIcon icon={["far", "envelope"]} />} />
+                        <ContactCard key={email} link={`mailto:${email}`} icon={<FontAwesomeIcon icon={["far", "envelope"]} />} />
                     ))}
                     <ContactCard link={linkedIn} icon={<FontAwesomeIcon icon={["fab", "linkedin"]} />}/>
                 </section>
