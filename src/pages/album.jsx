@@ -14,10 +14,14 @@ const Contact = ({ data }) => {
         <Layout>
             <Helmet>
                 <title>Album | 鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content={albums.map(e=>e.title).join(", ")}
+                />
             </Helmet>
             <article className={styles.container}>
-                {albums.map(({ title, link, thumbnail }) => (
-                    <PhotoCard title={title} link={link} image={thumbnail.fluid} />
+                {albums.map(({ title, link, thumbnail },i) => (
+                    <PhotoCard title={title} link={link} image={thumbnail.fluid} key={i} />
                 ))}
             </article>
         </Layout>

@@ -11,10 +11,20 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
     /* Your site config here */
+    siteMetadata: {
+        siteUrl: 'https://ljcheng.tw'
+    },
     plugins: [
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-sitemap`,
+        {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                policy: [{ userAgent: '*', allow: '/' }]
+            }
+        },
         {
             resolve: `gatsby-source-contentful`,
             options: {

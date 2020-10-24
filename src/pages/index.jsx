@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 import Image from "gatsby-image";
 import styles from "../css/home.module.css";
 import Layout from "../components/Layout";
@@ -18,13 +19,19 @@ const Home = ({ data }) => {
             researchInterests: { researchInterests },
             photo: { fluid },
         },
-        contentfulContact: { linkedIn, email }
+        contentfulContact: { linkedIn, email },
     } = data;
 
     return (
         <Layout>
             <Helmet>
                 <title>鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content={`${name} ${documentToPlainTextString(
+                        description.json
+                    )}`}
+                />
             </Helmet>
             <article className={styles.container}>
                 <section className={styles.intro}>
@@ -47,9 +54,18 @@ const Home = ({ data }) => {
                 <section className={styles.contact}>
                     <h3>Find Me Online</h3>
                     {email.map(email => (
-                        <ContactCard key={email} link={`mailto:${email}`} icon={<FontAwesomeIcon icon={["far", "envelope"]} />} />
+                        <ContactCard
+                            key={email}
+                            link={`mailto:${email}`}
+                            icon={
+                                <FontAwesomeIcon icon={["far", "envelope"]} />
+                            }
+                        />
                     ))}
-                    <ContactCard link={linkedIn} icon={<FontAwesomeIcon icon={["fab", "linkedin"]} />}/>
+                    <ContactCard
+                        link={linkedIn}
+                        icon={<FontAwesomeIcon icon={["fab", "linkedin"]} />}
+                    />
                 </section>
             </article>
         </Layout>

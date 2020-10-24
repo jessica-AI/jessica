@@ -7,6 +7,10 @@ const error = () => {
         <Layout>
             <Helmet>
                 <title>404 | 鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content="404 ERROR"
+                />
             </Helmet>
             <h3 style={{ fontSize: "7rem", textAlign: "center", marginTop: "3rem" }}>404</h3>
             <p style={{ fontSize: "3rem", textAlign: "center", marginBottom: "3rem" }}>Oops, looks like something went wrong.</p>
