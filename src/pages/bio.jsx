@@ -14,6 +14,10 @@ const Bio = ({ data }) => {
         <Layout>
             <Helmet>
                 <title>Bio | 鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content={bios.map(e=>e.title).join(", ")}
+                />
             </Helmet>
             <article className={styles.container}>
                 {bios.map(bio => {

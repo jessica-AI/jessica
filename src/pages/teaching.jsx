@@ -11,18 +11,21 @@ const Teaching = ({ data }) => {
 
     const [selected, setSelected] = useState(0); // index of data array
 
-    console.log(teachings[selected]);
-
     return (
         <Layout>
             <Helmet>
                 <title>Teaching | 鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content={teachings.flat().map(e=>e.title).join(", ")}
+                />
             </Helmet>
             <article className={styles.container}>
                 <div className={styles.sidebar}>
                     {teachings.map(({ title }, index) => {
                         return (
                             <div
+                                key={index}
                                 role="button"
                                 tabIndex={index}
                                 onClick={() => {

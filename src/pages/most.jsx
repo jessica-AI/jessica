@@ -9,17 +9,21 @@ const Most = ({ data }) => {
         allContentfulMost: { nodes: projects },
     } = data;
 
-    const renderProject = project => <li>{project}</li>;
+    const renderProject = (project,i) => <li key={i}>{project}</li>;
 
     return (
         <Layout>
             <Helmet>
                 <title>Most | 鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content={projects.map(e=>e.title).join(", ")}
+                />
             </Helmet>
             <article className={styles.container}>
-                {projects.map(project => {
+                {projects.map((project,i) => {
                     return (
-                        <section>
+                        <section key={i}>
                             <h3 className={styles.title}>{project.title}</h3>
                             <ul>{project.items.map(renderProject)}</ul>
                         </section>

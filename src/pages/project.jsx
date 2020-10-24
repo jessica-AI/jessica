@@ -22,11 +22,15 @@ const Project = ({ data }) => {
         <Layout>
             <Helmet>
                 <title>Project | 鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content={projects.map(e=>e.title).join(", ")}
+                />
             </Helmet>
             <article className={styles.container}>
-                {projects.map(project => {
+                {projects.map((project,i) => {
                     return (
-                        <section>
+                        <section key={i}>
                             <h3 className={styles.title}>{project.title}</h3>
                             {documentToReactComponents(project.content.json,options)}
                         </section>

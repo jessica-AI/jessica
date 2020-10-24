@@ -21,11 +21,15 @@ const Publication = ({ data }) => {
         <Layout>
             <Helmet>
                 <title>Publication | 鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content={publications.map(e=>e.title).join(", ")}
+                />
             </Helmet>
             <article className={styles.container}>
                 {publications.map(publication => {
                     return (
-                        <section>
+                        <section key={publication.title}>
                             <h3 className={styles.title}>
                                 {publication.title}
                             </h3>

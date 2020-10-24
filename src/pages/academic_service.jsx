@@ -9,17 +9,21 @@ const AcademicService = ({ data }) => {
         allContentfulAcademicService: { nodes: services },
     } = data;
 
-    const renderService = item => <li>{item}</li>;
+    const renderService = (item,i) => <li key={i}>{item}</li>;
 
     return (
         <Layout>
             <Helmet>
                 <title>Academic Service | 鄭麗珍 Li-Chen Cheng</title>
+                <meta
+                    name="description"
+                    content={services.map(e=>e.title).join(", ")}
+                />
             </Helmet>
             <article className={styles.container}>
-                {services.map(service => {
+                {services.map((service,i) => {
                     return (
-                        <section>
+                        <section key={i}>
                             <h3 className={styles.title}>{service.title}</h3>
                             <ul>{service.items.map(renderService)}</ul>
                         </section>
