@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import styles from "../css/teaching.module.css";
+import styles from "../css/research_area.module.css";
 import Helmet from "react-helmet";
 
 const ResearchArea = ({ data }) => {
