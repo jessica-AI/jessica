@@ -4,9 +4,9 @@ import Layout from "../components/Layout";
 import styles from "../css/teaching.module.css";
 import Helmet from "react-helmet";
 
-const Teaching = ({ data }) => {
+const ResearchArea = ({ data }) => {
     const {
-        allContentfulTeaching: { nodes: teachings },
+        allContentfulResearchArea: { nodes: research },
     } = data;
 
     const [selected, setSelected] = useState(0); // index of data array
@@ -14,15 +14,15 @@ const Teaching = ({ data }) => {
     return (
         <Layout>
             <Helmet>
-                <title>Teaching | 鄭麗珍 Li-Chen Cheng</title>
+                <title>Research Area | 鄭麗珍 Li-Chen Cheng</title>
                 <meta
                     name="description"
-                    content={teachings.flat().map(e=>e.title).join(", ")}
+                    content={research.flat().map(e=>e.title).join(", ")}
                 />
             </Helmet>
             <article className={styles.container}>
                 <div className={styles.sidebar}>
-                    {teachings.map(({ title }, index) => {
+                    {research.map(({ title }, index) => {
                         return (
                             <div
                                 key={index}
@@ -46,17 +46,17 @@ const Teaching = ({ data }) => {
                 <div className={styles.content}>
                     <section>
                         <h3 className={styles.title}>
-                            {teachings[selected].title}
+                            {research[selected].title}
                         </h3>
                         <p>
                             {
-                                teachings[selected].descriptionChinese
+                                research[selected].descriptionChinese
                                     .descriptionChinese
                             }
                         </p>
                         <p>
                             {
-                                teachings[selected].descriptionEnglish
+                                research[selected].descriptionEnglish
                                     .descriptionEnglish
                             }
                         </p>
@@ -69,7 +69,7 @@ const Teaching = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulTeaching(sort: { order: ASC, fields: createdAt }) {
+        allContentfulResearchArea(sort: { order: ASC, fields: createdAt }) {
             nodes {
                 title
                 descriptionEnglish {
@@ -83,4 +83,4 @@ export const query = graphql`
     }
 `;
 
-export default Teaching;
+export default ResearchArea;
