@@ -30,7 +30,7 @@ const Navbar = () => {
                     <Link to="/album" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Album</Link>
                 </li>
                 <li>
-                    <Link to="/Research Area" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Research Area</Link>
+                    <Link to="/research_area" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Research Area</Link>
                 </li>
             </ul>
         </nav>
