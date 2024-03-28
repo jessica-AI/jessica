@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styles from "../css/research_area.module.css";
 import Helmet from "react-helmet";
-import ReactMarkdown from 'react-markdown';
 
 const ResearchArea = ({ data }) => {
     const {
