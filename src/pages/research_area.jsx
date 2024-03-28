@@ -49,12 +49,18 @@ const ResearchArea = ({ data }) => {
                         <h3 className={styles.title}>
                             {research[selected].title}
                         </h3>
-                        <ReactMarkdown>
-                            {research[selected].descriptionChinese.descriptionChinese}
-                        </ReactMarkdown>
-                        <ReactMarkdown>
-                            {research[selected].descriptionEnglish.descriptionEnglish}
-                        </ReactMarkdown>
+                        <p>
+                            {
+                                research[selected].descriptionChinese
+                                    .descriptionChinese
+                            }
+                        </p>
+                        <p>
+                            {
+                                research[selected].descriptionEnglish
+                                    .descriptionEnglish
+                            }
+                        </p>
                     </section>
                 </div>
             </article>
