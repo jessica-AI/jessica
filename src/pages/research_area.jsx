@@ -56,8 +56,8 @@ const ResearchArea = ({ data }) => {
                         </p>
                         <p>
                             {
-                                research[selected].descriptionEnglish
-                                    .descriptionEnglish
+                                research[selected].descriptionChinese2
+                                    .descriptionChinese2
                             }
                         </p>
                     </section>
@@ -72,8 +72,8 @@ export const query = graphql`
         allContentfulResearchArea(sort: { order: ASC, fields: createdAt }) {
             nodes {
                 title
-                descriptionEnglish {
-                    descriptionEnglish
+                descriptionChinese2 {
+                    descriptionChinese2
                 }
                 descriptionChinese {
                     descriptionChinese
