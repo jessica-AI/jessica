@@ -68,7 +68,7 @@ const ResearchArea = ({ data }) => {
                         </p>
                         <p>
                             {
-                                research[selected].descriptionChinese2
+                                research[selected].descriptionChinese3
                                     .descriptionChinese3
                             }
                         </p>
