@@ -14,7 +14,7 @@ const ResearchArea = ({ data }) => {
     return (
         <Layout>
             <Helmet>
-                <title>Research Area | 鄭麗珍 Li-Chen Cheng</title>
+                <title>Project | 鄭麗珍 Li-Chen Cheng</title>
                 <meta
                     name="description"
                     content={research.flat().map(e=>e.title).join(", ")}
