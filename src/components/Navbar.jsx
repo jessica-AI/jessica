@@ -24,7 +24,7 @@ const Navbar = () => {
                     <Link to="/teaching" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Teaching</Link>
                 </li>
                 <li>
-                    <Link to="/project" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Project</Link>
+                    <Link to="/project" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Student Honor</Link>
                 </li>
                 <li>
                     <Link to="/academic_service" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Academic Service</Link>
