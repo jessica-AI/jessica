@@ -18,7 +18,7 @@ const Navbar = () => {
                     <Link to="/most" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Most</Link>
                 </li>
                 <li>
-                    <Link to="/research_area" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Research Area</Link>
+                    <Link to="/research_area" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Project</Link>
                 </li>
                 <li>
                     <Link to="/teaching" activeStyle={{backgroundColor:'#fff',color:'var(--color-main-1)'}}>Teaching</Link>
