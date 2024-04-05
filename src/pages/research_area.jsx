@@ -60,6 +60,12 @@ const ResearchArea = ({ data }) => {
                                     .descriptionEnglish
                             }
                         </p>
+                        <p>
+                            {
+                                research[selected].descriptionChinese2
+                                    .descriptionChinese2
+                            }
+                        </p>
                     </section>
                 </div>
             </article>
@@ -77,6 +83,9 @@ export const query = graphql`
                 }
                 descriptionChinese {
                     descriptionChinese
+                }
+                descriptionChinese2 {
+                    descriptionChinese2
                 }
             }
         }
