@@ -21,7 +21,7 @@ const Project = ({ data }) => {
     return (
         <Layout>
             <Helmet>
-                <title>Project | 鄭麗珍 Li-Chen Cheng</title>
+                <title>Student Honor | 鄭麗珍 Li-Chen Cheng</title>
                 <meta
                     name="description"
                     content={projects.map(e=>e.title).join(", ")}
