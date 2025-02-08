@@ -30,7 +30,7 @@
     "gatsby-plugin-robots-txt": "^1.5.3",
     "gatsby-plugin-sharp": "^2.6.28",
     "gatsby-plugin-sitemap": "^2.4.17",
-    "gatsby-source-contentful": "^2.3.38",
+    "gatsby-source-contentful": "latest",
     "gatsby-source-filesystem": "^2.3.25",
     "gatsby-transformer-sharp": "^2.5.13",
     "react": "^16.12.0",
