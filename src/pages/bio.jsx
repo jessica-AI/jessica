@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import styles from "../css/bio.module.css";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import * as styles from "../css/bio.module.css";
 import Helmet from "react-helmet";
 
 const Bio = ({ data }) => {
@@ -24,7 +24,7 @@ const Bio = ({ data }) => {
                     return (
                         <section key={bio.title}>
                             <h3 className={styles.title}>{bio.title}</h3>
-                            {documentToReactComponents(bio.content.json)}
+                            {renderRichText(bio.content)}
                         </section>
                     );
                 })}
@@ -35,11 +35,11 @@ const Bio = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulBio(sort: { order: ASC, fields: createdAt }) {
+        allContentfulBio(sort: { createdAt: ASC }) {
             nodes {
                 title
                 content {
-                    json
+                    raw
                 }
             }
         }

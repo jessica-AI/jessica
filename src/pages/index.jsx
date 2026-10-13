@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
-import Image from "gatsby-image";
-import styles from "../css/home.module.css";
+import { GatsbyImage } from "gatsby-plugin-image";
+import * as styles from "../css/home.module.css";
 import Layout from "../components/Layout";
 import Helmet from "react-helmet";
 import ContactCard from "../components/ContactCard";
@@ -17,7 +17,7 @@ const Home = ({ data }) => {
             name,
             description,
             researchInterests: { researchInterests },
-            photo: { fluid },
+            photo: { gatsbyImageData },
         },
         contentfulContact: { linkedIn, email },
     } = data;
@@ -29,17 +29,17 @@ const Home = ({ data }) => {
                 <meta
                     name="description"
                     content={`${name} ${documentToPlainTextString(
-                        description.json
+                        JSON.parse(description.raw)
                     )}`}
                 />
             </Helmet>
             <article className={styles.container}>
                 <section className={styles.intro}>
-                    <Image fluid={fluid} alt={title} className={styles.photo} />
+                    <GatsbyImage image={gatsbyImageData} alt={title} className={styles.photo} />
                     <div>
                         <div>
                             <h3>{name}</h3>
-                            {documentToReactComponents(description.json)}
+                            {renderRichText(description)}
                         </div>
                         <div>
                             <h4>研究領域</h4>
@@ -49,7 +49,7 @@ const Home = ({ data }) => {
                 </section>
                 <section className={styles.about}>
                     <h3>about me</h3>
-                    {documentToReactComponents(aboutMe.json)}
+                    {renderRichText(aboutMe)}
                 </section>
                 <section className={styles.contact}>
                     <h3>Find Me Online</h3>
@@ -76,21 +76,19 @@ export const query = graphql`
     {
         contentfulHome {
             aboutMe {
-                json
+                raw
             }
             subtitle
             title
             name
             description {
-                json
+                raw
             }
             researchInterests {
                 researchInterests
             }
             photo {
-                fluid {
-                    ...GatsbyContentfulFluid
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
             }
         }
         contentfulContact {
