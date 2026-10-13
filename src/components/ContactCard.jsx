@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../css/contact_card.module.css";
+import * as styles from "../css/contact_card.module.css";
 
 const ContactCard = ({icon,link}) => {
     return (

@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import PhotoCard from "../components/PhotoCard";
-import styles from "../css/album.module.css";
+import * as styles from "../css/album.module.css";
 import Helmet from "react-helmet";
 
 const Contact = ({ data }) => {
@@ -21,7 +21,7 @@ const Contact = ({ data }) => {
             </Helmet>
             <article className={styles.container}>
                 {albums.map(({ title, link, thumbnail },i) => (
-                    <PhotoCard title={title} link={link} image={thumbnail.fluid} key={i} />
+                    <PhotoCard title={title} link={link} image={thumbnail.gatsbyImageData} key={i} />
                 ))}
             </article>
         </Layout>
@@ -30,13 +30,11 @@ const Contact = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulAlbum(sort: { order: ASC, fields: createdAt }) {
+        allContentfulAlbum(sort: { createdAt: ASC }) {
             nodes {
                 title
                 thumbnail {
-                    fluid {
-                        ...GatsbyContentfulFluid
-                    }
+                    gatsbyImageData(layout: FULL_WIDTH)
                 }
                 link
             }

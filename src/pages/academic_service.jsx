@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import styles from "../css/academicService.module.css";
+import * as styles from "../css/academicService.module.css";
 import Helmet from "react-helmet";
 
 const AcademicService = ({ data }) => {
@@ -36,7 +36,7 @@ const AcademicService = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulAcademicService(sort: { order: ASC, fields: createdAt }) {
+        allContentfulAcademicService(sort: { createdAt: ASC }) {
             nodes {
                 title
                 items

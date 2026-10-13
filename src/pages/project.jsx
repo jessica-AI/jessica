@@ -1,15 +1,15 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import styles from "../css/project.module.css";
+import * as styles from "../css/project.module.css";
 import Helmet from "react-helmet";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 
 const { BLOCKS } = require('@contentful/rich-text-types');
 
 const options = {
     renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: node => <img className="custom-asset" src={`${node.data.target.fields.file["en-US"].url}`} alt="custom-asset" />
+        [BLOCKS.EMBEDDED_ASSET]: node => node.data.target?.file?.url ? <img className="custom-asset" src={node.data.target.file.url} alt="custom-asset" /> : null
     },
 };
 
@@ -32,7 +32,7 @@ const Project = ({ data }) => {
                     return (
                         <section key={i}>
                             <h3 className={styles.title}>{project.title}</h3>
-                            {documentToReactComponents(project.content.json,options)}
+                            {renderRichText(project.content,options)}
                         </section>
                     );
                 })}
@@ -43,11 +43,11 @@ const Project = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulProject(sort: { order: ASC, fields: createdAt }) {
+        allContentfulProject(sort: { createdAt: ASC }) {
             nodes {
                 title
                 content{
-                    json
+                    raw
                 }
             }
         }

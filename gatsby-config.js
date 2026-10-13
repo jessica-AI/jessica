@@ -15,6 +15,7 @@ module.exports = {
         siteUrl: 'https://ljcheng.tw'
     },
     plugins: [
+        `gatsby-plugin-image`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-react-helmet`,
@@ -44,8 +45,7 @@ module.exports = {
             options: {
                 postCssPlugins: [
                     autoprefixer
-                ],
-                precision: 8
+                ]
             }
         }
     ],

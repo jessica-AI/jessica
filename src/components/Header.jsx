@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../css/header.module.css";
+import * as styles from "../css/header.module.css";
 import Navbar from "./Navbar";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -9,9 +9,7 @@ const getData = graphql`
     query {
         file(relativePath: { eq: "header_background.jpg" }) {
             childImageSharp {
-                fluid(quality: 100, maxWidth: 1800) {
-                    ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
         }
         contentfulHome {
@@ -30,7 +28,7 @@ const Header = () => {
         contentfulHome: { title, subtitle },
         contentfulContact: { linkedIn, email },
         file: {
-            childImageSharp: { fluid },
+            childImageSharp: { gatsbyImageData },
         },
     } = useStaticQuery(getData);
 
@@ -54,7 +52,7 @@ const Header = () => {
                     </a>
                 </div>
             </article>
-            <Image fluid={fluid} alt="background" />
+            <GatsbyImage image={gatsbyImageData} alt="background" />
             <input
                 type="checkbox"
                 id="hamburger"

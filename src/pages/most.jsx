@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import styles from "../css/most.module.css";
+import * as styles from "../css/most.module.css";
 import Helmet from "react-helmet";
 
 const Most = ({ data }) => {
@@ -36,7 +36,7 @@ const Most = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulMost(sort: { order: ASC, fields: createdAt }) {
+        allContentfulMost(sort: { createdAt: ASC }) {
             nodes {
                 title
                 items

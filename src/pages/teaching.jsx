@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import styles from "../css/teaching.module.css";
+import * as styles from "../css/teaching.module.css";
 import Helmet from "react-helmet";
 
 const Teaching = ({ data }) => {
@@ -69,7 +69,7 @@ const Teaching = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulTeaching(sort: { order: ASC, fields: createdAt }) {
+        allContentfulTeaching(sort: { createdAt: ASC }) {
             nodes {
                 title
                 descriptionEnglish {

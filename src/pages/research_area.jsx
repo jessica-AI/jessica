@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import styles from "../css/research_area.module.css";
+import * as styles from "../css/research_area.module.css";
 import Helmet from "react-helmet";
 
 const ResearchArea = ({ data }) => {
@@ -105,7 +105,7 @@ const ResearchArea = ({ data }) => {
 
 export const query = graphql`
     {
-        allContentfulResearchArea(sort: { order: ASC, fields: createdAt }) {
+        allContentfulResearchArea(sort: { createdAt: ASC }) {
             nodes {
                 title
                 descriptionEnglish {
